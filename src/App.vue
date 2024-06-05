@@ -23,7 +23,7 @@
           <div class="flex items-center relative">
             <img @click="OpenMenu" class="cursor-pointer block w-9 xl:hidden" src="./assets/Menu.png" alt="" />
             <router-link to="/">
-              <img class="w-32" src="./assets/Creatin.png" alt="" />
+              <img class="w-32" src="./assets/FullLogo.png" alt="" />
             </router-link>
             <div class="items-center flex gap-8 z-20">
               <router-link :to="{ name: 'Catalog' }">
@@ -67,12 +67,12 @@
                     <div v-else class="flex flex-col gap-10 w-full h-full px-4">
                       <div v-for="item in INPComputed" :key="item">
                         <router-link :to="{name: 'Product', params: {Product: item.fullname, ProductCategory: item.Category}}">
-                          <div class="w-full h-[150px] flex cursor-pointer duration-700 hover:bg-gray-50">
+                          <div @click="InptCloseDiv2" class="w-full h-[150px] flex cursor-pointer duration-700 hover:bg-gray-50">
                             <img class="w-[100px]" :src="item.img" alt="" />
                             <div class="ml-10 mt-2">
                               <h2 class="text-lg font-normal">{{ item.title }}</h2>
                               <p>{{ item.SmallTitl }}</p>
-                              <h2 class="text-2xl">{{ item.price }}$</h2>
+                              <h2 class="text-2xl text-red-600">{{ item.price }}$</h2>
                             </div>
                           </div>
                         </router-link>
@@ -105,7 +105,7 @@
                     <div class="ml-10 mt-2">
                       <h2 class="text-lg font-normal">{{ item.title }}</h2>
                       <p>{{ item.SmallTitl }}</p>
-                      <h2 class="text-2xl">{{ item.price }}$</h2>
+                      <h2 class="text-2xl text-red-600">{{ item.price }}$</h2>
                     </div>
                   </div>
                 </router-link>
@@ -196,6 +196,10 @@ function ModalFunc(e) {
 
 function InptCloseDiv(){
   document.querySelector('.VmodelDiv').style.display = 'none'
+}
+function InptCloseDiv2(){
+  document.querySelector(".InpDiv").style.display = 'none'
+  document.querySelector('.Modal').style.display = 'none'
 }
 
 const INPComputed = computed(() => {
