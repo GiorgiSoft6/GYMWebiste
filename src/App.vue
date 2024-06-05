@@ -23,7 +23,7 @@
           <div class="flex items-center relative">
             <img @click="OpenMenu" class="cursor-pointer block w-9 xl:hidden" src="./assets/Menu.png" alt="" />
             <router-link to="/">
-              <img class="w-32" src="./assets/logo.png" alt="" />
+              <img class="w-32" src="./assets/Creatin.png" alt="" />
             </router-link>
             <div class="items-center flex gap-8 z-20">
               <router-link :to="{ name: 'Catalog' }">
